@@ -6,7 +6,8 @@ def test_reponse():
     if reponse.status_code == 200:
         return reponse.json()
     elif reponse.status_code == 400:
-        return f"Error with status code: {reponse.status_code}"
+       # return f"Error with status code: {reponse.status_code}"
+        return reponse.json()
     else:
         return "Error not indicated"
     

@@ -7,12 +7,12 @@ def convert_f_to_c():
     # Check if "fahrenheit" is in the query string
     fahrenheit = request.args.get('fahrenheit')
     if fahrenheit is None:
-        return jsonify({"Error: Please specify an amount."}), 400
+        return jsonify({'Error': "Please specify an amount."}), 400
         
     try: 
         fahrenheit_value = float(fahrenheit)
     except ValueError:
-        return jsonify({"Error: invalid value for fahrenheit. Please provide a valid number"}), 400
+        return jsonify({'Error': "invalid value for fahrenheit. Please provide a valid number"}), 400
         
     celsius = (fahrenheit_value - 32) * 5/9
     return jsonify({
