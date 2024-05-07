@@ -7,6 +7,8 @@ def convert_f_to_c():
     # Check if "fahrenheit" is in the query string
     if 'fahrenheit' in request.args:
         fahrenheit = float(request.args['fahrenheit'])
+        if fahrenheit == None:
+            return "Error"
         celsius = (fahrenheit - 32) * 5/9
         return jsonify({
             #'Fahrenheit given': fahrenheit,
