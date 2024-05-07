@@ -1,7 +1,7 @@
 import requests
 
 def test_reponse():
-    reponse = requests.get("https://f-to-c-microservice-a24a3db4caa7.herokuapp.com/convert?fahrenheit=212")
+    reponse = requests.get("https://f-to-c-microservice-a24a3db4caa7.herokuapp.com/convert?fahrenheit=")
 
     if reponse.status_code == 200:
         return reponse.json()
